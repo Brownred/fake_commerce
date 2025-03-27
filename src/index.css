@@ -1,0 +1,46 @@
+/* Remove the default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+.navBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(241, 241, 241);
+  border-color: rgb(179, 179, 179);
+  border-style: solid;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  z-index: 30;
+
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.nav-logo {
+  width: 50px;
+  height: 40px;
+  object-fit: cover;
+  
+}
+
+.nav-links {
+  display: flex;
+  gap: 16px;
+}
+
+
+
+
+
+.pages {
+  margin-top: 70px;  
+}
