@@ -2,8 +2,9 @@ import NavBar from "./layouts/navBar"
 import HomePage from "./pages/home"
 import UsersPage from "./pages/users"
 import AboutUs from "./pages/about-us.jsx"
+import ProductPage from "./pages/productPage"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import ProductPage from "./pages/productPage.jsx"
+
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
           <Route path="/" element={<HomePage />} />          
           <Route path="/users" element={<UsersPage />}  />
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/product/:productID" element={<ProductPage />} />
+          <Route path="/product/:ID" element={<ProductPage />} />
           
         </Routes>
       </div>

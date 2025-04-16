@@ -6,10 +6,6 @@ export default function HomePage() {
     const [products, setProducts] = useState([])
 
 
-
-    
-    
-
     useEffect( () => {
         async function FetchProducts() {
             const response = await fetch("https://fakestoreapi.com/products")

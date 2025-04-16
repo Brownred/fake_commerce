@@ -1,18 +1,33 @@
 import { useParams } from "react-router-dom"
+import { useState, useEffect } from 'react'
 
 export default function ProductPage() {
+    const [product, setProduct] = useState({})
 
-    const { productID } = useParams()
+
+    const { ID } = useParams()
+
+    useEffect(() => {
+        async function fetchProduct() {
+            const response = await fetch(`https://fakestoreapi.com/products/${ID}`)
+            const data = await response.json()
     
-    fetch(`https://fakestoreapi.com/products/${productID}`)
+            
+            setProduct(data)
+        }
+    
+        fetchProduct()
+    }, [])
+       
 
 
     return (
         <div>
-            <img src="/fam.jpg" alt="Solar pannels"/>
-            <h1>Solar Pannels</h1>
-            <p>Ksh 2,000</p>
-            <p>This are solar pannels from China. They are very efficient and last for years after a whole day charge.</p>
+            <img src={product.image} alt="Solar pannels"/>
+            <h1>{product.title}</h1>
+            <p>{product.price}</p>
+            <p>{product.description}</p>
+
         </div>
     )
 }
