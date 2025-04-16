@@ -4,20 +4,29 @@ import ProductCard from "../products/ProductCard"
 export default function HomePage() {
 
     const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(false)
 
 
     useEffect( () => {
         async function FetchProducts() {
+            setLoading(true)
             const response = await fetch("https://fakestoreapi.com/products")
             const data = await response.json()  // to Javascript
             setProducts(data)
+            setLoading(false)
         }
     
         FetchProducts()
     }, [])
 
     
-
+    if (loading) {
+        return (
+            <div>
+                Loading ...
+            </div>
+        )
+    }
 
     
     return (
